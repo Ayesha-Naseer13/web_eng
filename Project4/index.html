@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22F-3672 Bank Account</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏦 22F-3672 Bank</h1>
+        
+        <div class="account-info">
+            <p>Account Number: <span id="accNumber"></span></p>
+            <p>Balance: <span id="balance">0</span> PKR</p>
+        </div>
+
+        <div class="transaction-section">
+            <form id="depositForm" class="transaction-form">
+                <h3>💰 Deposit</h3>
+                <input type="number" id="depositAmount" required>
+                <button type="submit">Deposit</button>
+            </form>
+
+            <form id="withdrawForm" class="transaction-form">
+                <h3>💸 Withdraw</h3>
+                <input type="number" id="withdrawAmount" required>
+                <button type="submit">Withdraw</button>
+            </form>
+        </div>
+
+        <div class="history-section">
+            <h2>📜 Transaction History</h2>
+            <ul id="transactionList"></ul>
+            <button id="downloadBtn">📥 Download History</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

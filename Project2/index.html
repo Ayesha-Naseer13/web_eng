@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Todo List</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1>Smart To-do</h1>
+            <div class="controls">
+                <button id="darkModeToggle">Dark Mode</button>
+                <input type="text" id="searchInput" placeholder="Search tasks...">
+            </div>
+        </header>
+
+        <div class="input-group">
+            <input type="text" id="taskInput" placeholder="New task...">
+            <select id="prioritySelect">
+                <option value="High">🚨 High</option>
+                <option value="Medium">📅 Medium</option>
+                <option value="Low">🐢 Low</option>
+            </select>
+            <button id="addTask">Add Task</button>
+        </div>
+
+        <div class="stats">Tasks remaining: <span id="taskCount">0</span></div>
+
+        <div class="task-board">
+            <div class="priority-column" data-priority="High"></div>
+            <div class="priority-column" data-priority="Medium"></div>
+            <div class="priority-column" data-priority="Low"></div>
+        </div>
+
+        <div class="completed-section">
+            <h3>Completed Tasks</h3>
+            <div id="completedTasks"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

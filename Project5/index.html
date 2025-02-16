@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Discount System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Discount System</h1>
+        <div class="input-group">
+            <label for="rollNumber">Roll Number:</label>
+            <input type="text" id="rollNumber" placeholder="Enter your roll number (e.g., 22F-3672)">
+        </div>
+        <div class="input-group">
+            <label for="promoCode">Promo Code:</label>
+            <input type="text" id="promoCode" placeholder="Enter promo code (optional)">
+        </div>
+        
+        <h2>Available Products</h2>
+        <div id="products" class="products-grid"></div>
+        
+        <h2>Selected Items</h2>
+        <div id="selectedItems"></div>
+        
+        <div id="priceSummary" class="price-summary">
+            <p>Total Discount: <span id="totalDiscount">0</span>%</p>
+            <p>Final Price: $<span id="finalPrice">0.00</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
