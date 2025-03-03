@@ -33,7 +33,7 @@ function renderProducts() {
 }
 
 function toggleSelection(productId) {
-    selectedItems.push(productId);  // Allow selecting the same product multiple times
+    selectedItems.push(productId); 
     updateSelectionDisplay();
     updatePricing();
 }
@@ -62,15 +62,12 @@ function calculateDiscount() {
     const rollNumber = document.getElementById('rollNumber').value;
     const promoCode = document.getElementById('promoCode').value.toUpperCase();
     
-    // Calculate base discount from roll number
     const rollDigits = rollNumber.split('-')[1] || '';
     const middleDigits = rollDigits.slice(1, 3) || '00';
     let discount = parseInt(middleDigits) || 0;
     
-    // Apply promo code discount
     discount += PROMO_CODES.get(promoCode) || 0;
     
-    // Update max discount based on selected items
     currentMaxDiscount = selectedItems.length >= 2 ? 60 : 50;
     
     return Math.min(discount, currentMaxDiscount);

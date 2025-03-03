@@ -2,16 +2,13 @@ const transformString = (str, N) => {
     if (N <= 0) N = 1;
     const skipPositions = new Set();
     
-    // Populate positions to skip
     for (let i = 1; i <= str.length; i++) {
         if (i % N === 0) skipPositions.add(i - 1);
     }
 
-    // Prepare characters to reverse
     const charsToReverse = [...str].filter((_, i) => !skipPositions.has(i));
     const reversedChars = [...charsToReverse].reverse();
 
-    // Rebuild the string
     return [...str].map((char, i) => 
         skipPositions.has(i) ? char : reversedChars.shift()
     ).join('');
@@ -22,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const historyList = document.getElementById('historyList');
     const toggle = document.getElementById('toggleMode');
 
-    // Toggle between roll number and custom N
     toggle.addEventListener('change', () => {
         document.getElementById('rollGroup').style.display = 
             toggle.checked ? 'none' : 'block';
@@ -37,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const inputString = document.getElementById('inputString').value;
         const useCustom = toggle.checked;
         
-        // Calculate N
         let N;
         if (useCustom) {
             N = parseInt(document.getElementById('customN').value, 10) || 1;

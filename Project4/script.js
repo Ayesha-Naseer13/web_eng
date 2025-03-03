@@ -1,8 +1,8 @@
-const ROLL_NO = "22F-3672"; // Example roll number
-const MULTIPLIER = parseInt(ROLL_NO.slice(-1)); // Last digit = 2
-const INITIAL_BALANCE = MULTIPLIER * 1000; // 2 * 1000 = 2000
+const ROLL_NO = "22F-3672"; 
+const MULTIPLIER = parseInt(ROLL_NO.slice(-1)); 
+const INITIAL_BALANCE = MULTIPLIER * 1000; 
 
-console.log(INITIAL_BALANCE); // Output: 2000
+console.log(INITIAL_BALANCE); 
 
 
 class BankAccount {
